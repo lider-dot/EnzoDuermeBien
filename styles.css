@@ -1,0 +1,64 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    max-height: 300px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 300px;
+        max-height: 350px;
+    }
+}
+.flowchart-step {
+    position: relative;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.flowchart-step:hover {
+    box-shadow: 0 8px 18px -2px #0077C044, 0 6px 12px -6px #00A1E444;
+    transform: scale(1.04);
+}
+.flowchart-arrow {
+    position: relative;
+    height: 3rem;
+    width: 2px;
+    background-color: #0077C0;
+    margin: 0 auto;
+}
+.flowchart-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #0077C0;
+}
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: none;}
+}
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(25px);}
+    to { opacity: 1; transform: none;}
+}
+.animate-fade-in { animation: fade-in 1s both; }
+.animate-fade-in-slow { animation: fade-in 1.8s both; }
+.animate-fade-in-up { animation: fade-in-up 1.5s both; }
+.animate-flowchart { animation: fade-in-up 1.2s both; }
